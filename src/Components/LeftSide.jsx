@@ -1,23 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SideCard from "./SideCard";
-import FetchData from "../hooks/FetchData";
+import FetchData, { FetchCategoryData } from "../hooks/FetchData";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import { setCategoryData } from "../Store/Slices/categoryData";
 import { setData } from "../Store/Slices/allData";
-export const LeftSide = () => {
+export const LeftSide = ({ setTitle }) => {
   const dispatch = useDispatch();
   const categoryData = useSelector((state) => state.allData);
 
   useEffect(() => {
-    axios
-      .get("https://openapi.programming-hero.com/api/news/categories")
-      .then((res) => {
-        dispatch(setData(res.data.data.news_category));
-      });
+    FetchData(
+      "https://openapi.programming-hero.com/api/news/categories",
+      setData,
+      dispatch
+    );
+
+    handelCategoryClick({ category_id: "08", category_name: "All News" });
   }, []);
   function handelCategoryClick(clickedData) {
     console.log(clickedData);
+    FetchCategoryData(
+      `https://openapi.programming-hero.com/api/news/category/${clickedData.category_id}`,
+      setCategoryData,
+      dispatch
+    );
+    setTitle(clickedData.category_name);
   }
+  console.log(useSelector((state) => state));
   return (
     <>
       <section className="w-[300px] px-3 flex-shrink-0">

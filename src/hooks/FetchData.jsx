@@ -2,14 +2,13 @@ import axios from "axios";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function FetchData() {
-  const dispatch = useDispatch();
-  const allData = useSelector((state) => state.allData);
-  console.log(allData);
-  axios
-    .get("https://openapi.programming-hero.com/api/news/categories")
-    .then((res) => {
-      console.log(res.data.data.news_category);
-    });
-  return;
+export default function FetchData(URL, UPDATESTATE, dispatch) {
+  axios.get(URL).then((res) => {
+    dispatch(UPDATESTATE(res.data.data.news_category));
+  });
+}
+export function FetchCategoryData(URL, UPDATESTATE, dispatch) {
+  axios.get(URL).then((res) => {
+    dispatch(UPDATESTATE(res.data.data));
+  });
 }

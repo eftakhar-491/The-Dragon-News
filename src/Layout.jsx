@@ -9,8 +9,8 @@ export const Layout = () => {
     <>
       <main className="max-w-[1440px] mx-auto">
         <Nav />
-        {/* <Outlet /> */}
-        <Home />
+        <Outlet />
+        {/* <Home /> */}
       </main>
     </>
   );
