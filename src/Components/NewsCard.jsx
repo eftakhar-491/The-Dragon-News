@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function NewsCard({ data }) {
   return (
     <>
-      <Link to={"/newsDetails"}>
+      <Link to={`/newsDetails/${data._id}`}>
         <section className="border-2 p-4 my-4 rounded-lg cursor-pointer">
           <div className="py-2 px-4 rounded-xl bg-[#F3F3F3] flex justify-between items-center">
             <div className="flex gap-3">

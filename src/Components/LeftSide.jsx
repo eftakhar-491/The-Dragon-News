@@ -18,7 +18,6 @@ export const LeftSide = ({ setTitle }) => {
     handelCategoryClick({ category_id: "08", category_name: "All News" });
   }, []);
   function handelCategoryClick(clickedData) {
-    console.log(clickedData);
     FetchCategoryData(
       `https://openapi.programming-hero.com/api/news/category/${clickedData.category_id}`,
       setCategoryData,
@@ -26,7 +25,7 @@ export const LeftSide = ({ setTitle }) => {
     );
     setTitle(clickedData.category_name);
   }
-  console.log(useSelector((state) => state));
+
   return (
     <>
       <section className="w-[300px] px-3 flex-shrink-0">

@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <>
@@ -32,8 +33,12 @@ export default function Nav() {
           {/* date + name + special */}
 
           <div>
-            <h2>Date</h2>
-            <p>Todays Paper</p>
+            <h2 className="font-bold">
+              Date: {new Date().toLocaleDateString()}
+            </h2>
+            <p className="text-sm hover:underline cursor-pointer">
+              Todays Paper
+            </p>
           </div>
           <div>
             <img src={logo} alt="Logo" />
@@ -46,10 +51,16 @@ export default function Nav() {
           </div>
         </section>
         <section className="mt-4">
-          <ul className="text-sm font-bold text-[#161616e4] flex justify-center items-center gap-5">
-            <li>Home</li>
-            <li>Blog</li>
-            <li>About Us</li>
+          <ul className="cursor-pointer text-sm font-bold text-[#161616e4] flex justify-center items-center gap-5">
+            <Link to={"/"}>
+              <li>Home</li>
+            </Link>
+            <Link to={"/blog"}>
+              <li>Blog</li>
+            </Link>
+            <Link to={"/about"}>
+              <li>About Us</li>
+            </Link>
             <li>Publish News</li>
           </ul>
         </section>

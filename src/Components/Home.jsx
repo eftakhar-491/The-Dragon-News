@@ -6,12 +6,13 @@ import { Outlet, useLocation, useParams } from "react-router-dom";
 
 export const Home = () => {
   const location = useLocation();
-  console.log(location.pathname);
+  const { id } = useParams();
+
   const [title, setTitle] = useState("");
   return (
     <>
       <section className="lg:w-4/5 mx-auto flex justify-between gap-4">
-        {location.pathname === "/newsDetails" ? (
+        {location.pathname === `/newsDetails/${id}` ? (
           <Outlet />
         ) : (
           <>
