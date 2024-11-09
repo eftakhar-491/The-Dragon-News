@@ -1,13 +1,17 @@
 import { Provider } from "react-redux";
-import Nav from "./Components/Nav";
+
 import { Layout } from "./Layout";
 import store from "./Store";
+import FireBaseData from "./Context/FireBaseData";
+import { useAllState } from "./hooks/USEALLSTATE";
 
 function App() {
   return (
     <>
       <Provider store={store}>
-        <Layout />
+        <FireBaseData.Provider value={useAllState()}>
+          <Layout />
+        </FireBaseData.Provider>
       </Provider>
     </>
   );

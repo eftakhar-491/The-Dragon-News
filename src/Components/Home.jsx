@@ -11,18 +11,22 @@ export const Home = () => {
   const [title, setTitle] = useState("");
   return (
     <>
-      <section className="lg:w-4/5 mx-auto flex justify-between gap-4">
-        {/* {location.pathname === `/newsDetails/${id}` ? ( */}
-        {/* <Outlet /> */}
-        {/* ) : ( */}
-        <>
-          <LeftSide setTitle={setTitle} />
-          <Middel title={title} />
-        </>
-        {/* )} */}
-        {/* <LeftSide /> */}
-        {/* <Middel /> */}
-        <RightSide />
+      <section className="lg:w-4/5 mx-auto flex flex-col lg:flex-row  justify-between gap-4">
+        {location.pathname === `/newsDetails/${id}` ? (
+          <>
+            <Outlet />
+            <RightSide />
+          </>
+        ) : (
+          <>
+            <LeftSide setTitle={setTitle} />
+            <Middel title={title} />
+            <RightSide />
+          </>
+        )}
+        {/* <LeftSide />
+        <Middel />
+        <RightSide /> */}
       </section>
       {/* <Outlet /> */}
     </>

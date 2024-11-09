@@ -5,7 +5,7 @@ import SideCard from "./SideCard";
 export default function RightSide() {
   return (
     <>
-      <section className="w-[300px]">
+      <section className="w-[300px] hidden lg:block">
         <h1 className="mb-3 text-lg font-bold">Log IN</h1>
         <RegisterLogIn />
         <SideCard />
