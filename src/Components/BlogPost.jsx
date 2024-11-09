@@ -9,7 +9,7 @@ function BlogPage() {
   const [content, setContent] = useState("");
 
   // Function to handle adding a new blog post
-  const handleAddPost = () => {
+  const handleAddPost = (e) => {
     if (title && content) {
       const newPost = { title, content, date: new Date().toLocaleDateString() };
       setPosts([newPost, ...posts]); // Add new post to the top of the list

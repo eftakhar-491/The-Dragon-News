@@ -12,14 +12,14 @@ export const Home = () => {
   return (
     <>
       <section className="lg:w-4/5 mx-auto flex justify-between gap-4">
-        {location.pathname === `/newsDetails/${id}` ? (
-          <Outlet />
-        ) : (
-          <>
-            <LeftSide setTitle={setTitle} />
-            <Middel title={title} />
-          </>
-        )}
+        {/* {location.pathname === `/newsDetails/${id}` ? ( */}
+        {/* <Outlet /> */}
+        {/* ) : ( */}
+        <>
+          <LeftSide setTitle={setTitle} />
+          <Middel title={title} />
+        </>
+        {/* )} */}
         {/* <LeftSide /> */}
         {/* <Middel /> */}
         <RightSide />
