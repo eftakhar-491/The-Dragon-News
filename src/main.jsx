@@ -8,6 +8,7 @@ import { Home } from "./Components/Home.jsx";
 import NewsDetails from "./Components/NewsDetails.jsx";
 import BlogPage from "./Components/BlogPost.jsx";
 import AboutUs from "./Components/AboutUs.jsx";
+import PublishNews from "./Components/PublishNews.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs />,
+      },
+      {
+        path: "/publish-news",
+        element: <PublishNews />,
       },
     ],
   },

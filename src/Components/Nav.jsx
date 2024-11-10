@@ -61,7 +61,9 @@ export default function Nav() {
             <Link to={"/about"}>
               <li>About Us</li>
             </Link>
-            <li>Publish News</li>
+            <Link to={"/publish-news"}>
+              <li>Publish News</li>
+            </Link>
           </ul>
         </section>
       </nav>
