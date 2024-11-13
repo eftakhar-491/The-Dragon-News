@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import moment from "moment";
 export default function Nav() {
   return (
     <>
@@ -34,7 +35,10 @@ export default function Nav() {
 
           <div>
             <h2 className="font-bold">
-              Date: {new Date().toLocaleDateString()}
+              Date:{" "}
+              <span className="text-gray-600 text-sm font-semibold">
+                {moment().format("MMMM Do YYYY, h:mm:ss a")}
+              </span>
             </h2>
             <p className="text-sm hover:underline cursor-pointer">
               Todays Paper
